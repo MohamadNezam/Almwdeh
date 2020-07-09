@@ -1,0 +1,157 @@
+﻿@{ 
+    Layout = null;
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+
+</head>
+<body class="login">
+    <div>
+        <a class="hiddenanchor" id="signup"></a>
+        <a class="hiddenanchor" id="signin"></a>
+
+
+        <div class="login_wrapper">
+            <div class="animate form login_form">
+                <section class="login_content">
+                    <form style="direction:rtl">
+                        <h1>@Almwdeh.Resources.Resource.LoginForm</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="@Almwdeh.Resources.Resource.PlaceHolderUserName" id="Username" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="@Almwdeh.Resources.Resource.PlaceHolderPassword" id="Password" required="" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" onclick="Validate()" style="margin-top:0px">@Almwdeh.Resources.Resource.LoginForm</a>
+                            <a class="reset_pass" href="#" style="margin-top:0px">@Almwdeh.Resources.Resource.Lostyourpassword</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                New to site?
+                                <a href="#signup" class="to_register"> @Almwdeh.Resources.Resource.CreateAccount </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div id="register" class="animate form registration_form">
+                <section class="login_content">
+                    <form style="direction:rtl">
+                        <h1>@Almwdeh.Resources.Resource.CreateAccount</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="@Almwdeh.Resources.Resource.PlaceHolderUserName" id="NewUsername" required="" />
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="@Almwdeh.Resources.Resource.PlaceHolderEmail" id="NewEmail" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="@Almwdeh.Resources.Resource.PlaceHolderPassword" id="NewPassword" required="" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" onclick="createAccount()">@Almwdeh.Resources.Resource.CreateAccount</a>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="separator">
+                            <p class="change_link">
+                                Already a member ?
+                                <a href="#signin" class="to_register"> Log in </a>
+                            </p>
+
+                            <div class="clearfix"></div>
+                            <br />
+
+                            <div>
+                                <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                                <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+    @Html.ActionLink("Forgot Password?", "ForgotPassword", "Account")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/lib")
+
+</body>
+
+<script src="~/vendors/jquery/dist/jquery.min.js"></script>
+
+<script>
+    function Validate() {
+     
+	$.ajax(
+	{
+  	type: "POST",
+  	url: '@Url.Action("Validate", "Account")',
+  	data: {
+            Username: $('#Username').val(),
+            Password: $('#Password').val(),
+            Email: $('#Username').val()
+  	},
+            error: function (result) {
+                alert(result.message);
+  	},
+  	success: function (result) {
+    	console.log(result);
+      	if (result.status == true) {
+
+      	window.location.href = '@Url.Action("CreateStudent", "Students")';
+    	}
+    	else {
+      	alert(result.message);
+    	}
+  	}
+	});
+  }
+</script>
+
+<script>
+    function createAccount() {
+       
+	$.ajax(
+	{
+  	type: "POST",
+  	url: '@Url.Action("CreateAccount", "Account")',
+  	data: {
+            Username: $('#NewUsername').val(),
+            Password: $('#NewPassword').val(),
+            Email: $('#NewEmail').val()
+  	},
+  	error: function (result) {
+    	alert(result.message);
+  	},
+  	success: function (result) {
+    	console.log(result);
+      	if (result.status == true) {
+
+      	window.location.href = '@Url.Action("Login", "Account")';
+    	}
+    	else {
+      	alert(result.message);
+    	}
+  	}
+	});
+  }
+</script>

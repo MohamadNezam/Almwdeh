@@ -1,0 +1,20 @@
+﻿@model Almwdeh.Models.StudentsTbl
+
+ <!-- menu profile quick info -->
+<div class="profile clearfix">
+    <div class="profile_pic">
+        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+    </div>
+    <div class="profile_info">
+        <span>Welcome,</span>
+        @if (@Model.FirstName != null)
+        {
+            <h2>@Model.FirstName</h2>
+        }
+        else
+        {
+            <h2>msallam</h2>
+        }
+    </div>
+</div>
+<!-- /menu profile quick info -->

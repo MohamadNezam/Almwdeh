@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AlmawadehDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GeneralInformationTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="GmailName" Type="nvarchar" MaxLength="50" />
+          <Property Name="GmailEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="GmailPassword" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="StudentsTbl">
+          <Key>
+            <PropertyRef Name="UserAccessIDs" />
+          </Key>
+          <Property Name="UserAccessIDs" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sex" Type="bit" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="BirthPlace" Type="nvarchar" MaxLength="50" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MotherName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileSyria" Type="nvarchar" MaxLength="50" />
+          <Property Name="MobileIran" Type="nvarchar" MaxLength="50" />
+          <Property Name="WhatsappNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="Doctrine" Type="nvarchar" MaxLength="50" />
+          <Property Name="CitySyria" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressSyria" Type="nvarchar" MaxLength="50" />
+          <Property Name="CityIran" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressIran" Type="nvarchar" MaxLength="50" />
+          <Property Name="MaritalStatus" Type="bit" />
+          <Property Name="WifeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChildernNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="WifeDetails" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassportNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="PassportExpireDate" Type="date" />
+          <Property Name="PassportFile" Type="nvarchar(max)" />
+          <Property Name="ResidentFile" Type="nvarchar(max)" />
+          <Property Name="ResidentExpireDate" Type="date" />
+          <Property Name="FinancialStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="NeedMonthlyAid" Type="bit" />
+          <Property Name="BankAccountNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankCardNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="BankShibaNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Working" Type="bit" />
+          <Property Name="WorkDetails" Type="nvarchar(max)" />
+          <Property Name="Skills" Type="nvarchar(max)" />
+          <Property Name="PreviousJobs" Type="nvarchar(max)" />
+          <Property Name="ShahidFamily" Type="bit" />
+          <Property Name="ShahidRelationship" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReligiousCommitment" Type="nvarchar" MaxLength="50" />
+          <Property Name="GeneralBehavior" Type="nvarchar" MaxLength="50" />
+          <Property Name="TheIdentifier" Type="nvarchar" MaxLength="50" />
+          <Property Name="EffectivenessAndActivity" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisciplineSituation" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdditionalInformation" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastEditDate" Type="datetime" />
+          <Property Name="EditVerified" Type="bit" />
+        </EntityType>
+        <EntityType Name="StudentsUniversitiesSemestersTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentUniversityIDs" Type="int" />
+          <Property Name="SemesterNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreditAchieved" Type="float" />
+          <Property Name="AverageScore" Type="float" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="LastEditDate" Type="date" />
+          <Property Name="EditVerified" Type="bit" />
+        </EntityType>
+        <EntityType Name="StudentsUniversitiesTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserAccessIDs" Type="int" />
+          <Property Name="AcademicDegree" Type="nvarchar" MaxLength="50" />
+          <Property Name="UniversityName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FieldOfStudy" Type="nvarchar" MaxLength="50" />
+          <Property Name="StudentUniversityNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartAcademicYearDate" Type="date" />
+          <Property Name="GraduationStatues" Type="nvarchar" MaxLength="50" />
+          <Property Name="GraduationYear" Type="date" />
+          <Property Name="AverageScore" Type="float" />
+          <Property Name="AverageScoreAuto" Type="float" />
+          <Property Name="CertificateFile" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="date" />
+          <Property Name="LastEditDate" Type="date" />
+          <Property Name="EditVerified" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="UsersAccessTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserRoleIDs" Type="int" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="AccessFailedCount" Type="int" />
+          <Property Name="LockoutEnabled" Type="bit" />
+          <Property Name="Verified" Type="bit" />
+          <Property Name="ResetPasswordCode" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UsersRolesTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_UsersAccessTbl_UsersRolesTbl">
+          <End Role="UsersRolesTbl" Type="Self.UsersRolesTbl" Multiplicity="0..1" />
+          <End Role="UsersAccessTbl" Type="Self.UsersAccessTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersRolesTbl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersAccessTbl">
+              <PropertyRef Name="UserRoleIDs" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="AlmawadehDbModelStoreContainer">
+          <EntitySet Name="GeneralInformationTbl" EntityType="Self.GeneralInformationTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentsTbl" EntityType="Self.StudentsTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentsUniversitiesSemestersTbl" EntityType="Self.StudentsUniversitiesSemestersTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentsUniversitiesTbl" EntityType="Self.StudentsUniversitiesTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersAccessTbl" EntityType="Self.UsersAccessTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersRolesTbl" EntityType="Self.UsersRolesTbl" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_UsersAccessTbl_UsersRolesTbl" Association="Self.FK_UsersAccessTbl_UsersRolesTbl">
+            <End Role="UsersRolesTbl" EntitySet="UsersRolesTbl" />
+            <End Role="UsersAccessTbl" EntitySet="UsersAccessTbl" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AlmawadehDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="StudentsTbl">
+          <Key>
+            <PropertyRef Name="UserAccessIDs" />
+          </Key>
+          <Property Name="UserAccessIDs" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sex" Type="Boolean" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="BirthPlace" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MotherName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileSyria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MobileIran" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WhatsappNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Doctrine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CitySyria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddressSyria" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CityIran" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddressIran" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MaritalStatus" Type="Boolean" />
+          <Property Name="WifeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChildernNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WifeDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PassportNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PassportExpireDate" Type="DateTime" Precision="0" />
+          <Property Name="PassportFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResidentFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ResidentExpireDate" Type="DateTime" Precision="0" />
+          <Property Name="FinancialStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NeedMonthlyAid" Type="Boolean" />
+          <Property Name="BankAccountNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankCardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BankShibaNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Working" Type="Boolean" />
+          <Property Name="WorkDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Skills" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PreviousJobs" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShahidFamily" Type="Boolean" />
+          <Property Name="ShahidRelationship" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReligiousCommitment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GeneralBehavior" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TheIdentifier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EffectivenessAndActivity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisciplineSituation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdditionalInformation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastEditDate" Type="DateTime" Precision="3" />
+          <Property Name="EditVerified" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="StudentsUniversitiesSemestersTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentUniversityIDs" Type="Int32" />
+          <Property Name="SemesterNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreditAchieved" Type="Double" />
+          <Property Name="AverageScore" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="LastEditDate" Type="DateTime" Precision="0" />
+          <Property Name="EditVerified" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="StudentsUniversitiesTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserAccessIDs" Type="Int32" />
+          <Property Name="AcademicDegree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UniversityName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FieldOfStudy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StudentUniversityNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartAcademicYearDate" Type="DateTime" Precision="0" />
+          <Property Name="GraduationStatues" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GraduationYear" Type="DateTime" Precision="0" />
+          <Property Name="AverageScore" Type="Double" />
+          <Property Name="AverageScoreAuto" Type="Double" />
+          <Property Name="CertificateFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+          <Property Name="LastEditDate" Type="DateTime" Precision="0" />
+          <Property Name="EditVerified" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UsersAccessTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserRoleIDs" Type="Int32" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="AccessFailedCount" Type="Int32" />
+          <Property Name="LockoutEnabled" Type="Boolean" />
+          <Property Name="Verified" Type="Boolean" />
+          <Property Name="ResetPasswordCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UsersRolesTbl" Relationship="Self.FK_UsersAccessTbl_UsersRolesTbl" FromRole="UsersAccessTbl" ToRole="UsersRolesTbl" />
+        </EntityType>
+        <EntityType Name="UsersRolesTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UsersAccessTbls" Relationship="Self.FK_UsersAccessTbl_UsersRolesTbl" FromRole="UsersRolesTbl" ToRole="UsersAccessTbl" />
+        </EntityType>
+        <Association Name="FK_UsersAccessTbl_UsersRolesTbl">
+          <End Role="UsersRolesTbl" Type="Self.UsersRolesTbl" Multiplicity="0..1" />
+          <End Role="UsersAccessTbl" Type="Self.UsersAccessTbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UsersRolesTbl">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersAccessTbl">
+              <PropertyRef Name="UserRoleIDs" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AlmawadehDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="StudentsTbls" EntityType="Self.StudentsTbl" />
+          <EntitySet Name="StudentsUniversitiesSemestersTbls" EntityType="Self.StudentsUniversitiesSemestersTbl" />
+          <EntitySet Name="StudentsUniversitiesTbls" EntityType="Self.StudentsUniversitiesTbl" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="UsersAccessTbls" EntityType="Self.UsersAccessTbl" />
+          <EntitySet Name="UsersRolesTbls" EntityType="Self.UsersRolesTbl" />
+          <AssociationSet Name="FK_UsersAccessTbl_UsersRolesTbl" Association="Self.FK_UsersAccessTbl_UsersRolesTbl">
+            <End Role="UsersRolesTbl" EntitySet="UsersRolesTbls" />
+            <End Role="UsersAccessTbl" EntitySet="UsersAccessTbls" />
+          </AssociationSet>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(AlmawadehDbModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(AlmawadehDbModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="GeneralInformationTbls" EntityType="AlmawadehDbModel.GeneralInformationTbl" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="GeneralInformationTbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="GmailPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GmailName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GmailEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AlmawadehDbModelStoreContainer" CdmEntityContainer="AlmawadehDbEntities">
+          <EntitySetMapping Name="StudentsTbls">
+            <EntityTypeMapping TypeName="AlmawadehDbModel.StudentsTbl">
+              <MappingFragment StoreEntitySet="StudentsTbl">
+                <ScalarProperty Name="UserAccessIDs" ColumnName="UserAccessIDs" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="BirthPlace" ColumnName="BirthPlace" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="MobileSyria" ColumnName="MobileSyria" />
+                <ScalarProperty Name="MobileIran" ColumnName="MobileIran" />
+                <ScalarProperty Name="WhatsappNumber" ColumnName="WhatsappNumber" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Doctrine" ColumnName="Doctrine" />
+                <ScalarProperty Name="CitySyria" ColumnName="CitySyria" />
+                <ScalarProperty Name="AddressSyria" ColumnName="AddressSyria" />
+                <ScalarProperty Name="CityIran" ColumnName="CityIran" />
+                <ScalarProperty Name="AddressIran" ColumnName="AddressIran" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="WifeName" ColumnName="WifeName" />
+                <ScalarProperty Name="ChildernNumber" ColumnName="ChildernNumber" />
+                <ScalarProperty Name="WifeDetails" ColumnName="WifeDetails" />
+                <ScalarProperty Name="PassportNumber" ColumnName="PassportNumber" />
+                <ScalarProperty Name="PassportExpireDate" ColumnName="PassportExpireDate" />
+                <ScalarProperty Name="PassportFile" ColumnName="PassportFile" />
+                <ScalarProperty Name="ResidentFile" ColumnName="ResidentFile" />
+                <ScalarProperty Name="ResidentExpireDate" ColumnName="ResidentExpireDate" />
+                <ScalarProperty Name="FinancialStatus" ColumnName="FinancialStatus" />
+                <ScalarProperty Name="NeedMonthlyAid" ColumnName="NeedMonthlyAid" />
+                <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+                <ScalarProperty Name="BankCardNumber" ColumnName="BankCardNumber" />
+                <ScalarProperty Name="BankShibaNumber" ColumnName="BankShibaNumber" />
+                <ScalarProperty Name="Working" ColumnName="Working" />
+                <ScalarProperty Name="WorkDetails" ColumnName="WorkDetails" />
+                <ScalarProperty Name="Skills" ColumnName="Skills" />
+                <ScalarProperty Name="PreviousJobs" ColumnName="PreviousJobs" />
+                <ScalarProperty Name="ShahidFamily" ColumnName="ShahidFamily" />
+                <ScalarProperty Name="ShahidRelationship" ColumnName="ShahidRelationship" />
+                <ScalarProperty Name="ReligiousCommitment" ColumnName="ReligiousCommitment" />
+                <ScalarProperty Name="GeneralBehavior" ColumnName="GeneralBehavior" />
+                <ScalarProperty Name="TheIdentifier" ColumnName="TheIdentifier" />
+                <ScalarProperty Name="EffectivenessAndActivity" ColumnName="EffectivenessAndActivity" />
+                <ScalarProperty Name="DisciplineSituation" ColumnName="DisciplineSituation" />
+                <ScalarProperty Name="AdditionalInformation" ColumnName="AdditionalInformation" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="EditVerified" ColumnName="EditVerified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentsUniversitiesSemestersTbls">
+            <EntityTypeMapping TypeName="AlmawadehDbModel.StudentsUniversitiesSemestersTbl">
+              <MappingFragment StoreEntitySet="StudentsUniversitiesSemestersTbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StudentUniversityIDs" ColumnName="StudentUniversityIDs" />
+                <ScalarProperty Name="SemesterNumber" ColumnName="SemesterNumber" />
+                <ScalarProperty Name="CreditAchieved" ColumnName="CreditAchieved" />
+                <ScalarProperty Name="AverageScore" ColumnName="AverageScore" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="EditVerified" ColumnName="EditVerified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentsUniversitiesTbls">
+            <EntityTypeMapping TypeName="AlmawadehDbModel.StudentsUniversitiesTbl">
+              <MappingFragment StoreEntitySet="StudentsUniversitiesTbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserAccessIDs" ColumnName="UserAccessIDs" />
+                <ScalarProperty Name="AcademicDegree" ColumnName="AcademicDegree" />
+                <ScalarProperty Name="UniversityName" ColumnName="UniversityName" />
+                <ScalarProperty Name="FieldOfStudy" ColumnName="FieldOfStudy" />
+                <ScalarProperty Name="StudentUniversityNumber" ColumnName="StudentUniversityNumber" />
+                <ScalarProperty Name="StartAcademicYearDate" ColumnName="StartAcademicYearDate" />
+                <ScalarProperty Name="GraduationStatues" ColumnName="GraduationStatues" />
+                <ScalarProperty Name="GraduationYear" ColumnName="GraduationYear" />
+                <ScalarProperty Name="AverageScore" ColumnName="AverageScore" />
+                <ScalarProperty Name="AverageScoreAuto" ColumnName="AverageScoreAuto" />
+                <ScalarProperty Name="CertificateFile" ColumnName="CertificateFile" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastEditDate" ColumnName="LastEditDate" />
+                <ScalarProperty Name="EditVerified" ColumnName="EditVerified" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="AlmawadehDbModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersAccessTbls">
+            <EntityTypeMapping TypeName="AlmawadehDbModel.UsersAccessTbl">
+              <MappingFragment StoreEntitySet="UsersAccessTbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserRoleIDs" ColumnName="UserRoleIDs" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="Verified" ColumnName="Verified" />
+                <ScalarProperty Name="ResetPasswordCode" ColumnName="ResetPasswordCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersRolesTbls">
+            <EntityTypeMapping TypeName="AlmawadehDbModel.UsersRolesTbl">
+              <MappingFragment StoreEntitySet="UsersRolesTbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="AlmawadehDbModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="AlmawadehDbModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="AlmawadehDbModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="AlmawadehDbModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AlmawadehDbModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="AlmawadehDbModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AlmawadehDbModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="AlmawadehDbModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="AlmawadehDbModel.Store.sp_upgraddiagrams" />
+          <EntitySetMapping Name="GeneralInformationTbls">
+            <EntityTypeMapping TypeName="AlmawadehDbModel.GeneralInformationTbl">
+              <MappingFragment StoreEntitySet="GeneralInformationTbl">
+                <ScalarProperty Name="GmailEmail" ColumnName="GmailEmail" />
+                <ScalarProperty Name="GmailName" ColumnName="GmailName" />
+                <ScalarProperty Name="GmailPassword" ColumnName="GmailPassword" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
